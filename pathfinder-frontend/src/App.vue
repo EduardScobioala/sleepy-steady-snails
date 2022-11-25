@@ -1,8 +1,9 @@
 <template>
 
   <v-app>
-    <HomeView></HomeView>
     <v-main>
+      <ToolbarView></ToolbarView>
+
       <router-view />
     </v-main>
   </v-app>
@@ -11,12 +12,16 @@
 <script lang="ts">
 import Vue from 'vue';
 import HomeView from './views/HomeView.vue';
+import ToolbarView from './views/ToolbarView.vue';
+import VueCookies from 'vue-cookies'
+
+Vue.use(VueCookies, { expires: '7d' })
 
 export default Vue.extend({
   name: "App",
   data: () => ({
     //
   }),
-  components: { HomeView }
+  components: { HomeView, ToolbarView }
 });
 </script>
