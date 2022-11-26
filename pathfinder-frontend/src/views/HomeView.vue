@@ -1,7 +1,7 @@
 <template>
   <div>
     <LoginView v-if="!loggedIn"></LoginView>
-    <DashboardView v-if="loggedIn"></DashboardView>
+    <DashboardViewVue v-if="loggedIn"></DashboardViewVue>
   </div>
 </template>
 
@@ -11,6 +11,7 @@ import { VueCookies } from 'vue-cookies';
 import LoginView from './Dashboard/LoginView.vue';
 import { defineStore, storeToRefs } from 'pinia';
 import { useGlobalStore } from '../store/global';
+import DashboardViewVue from '@/views/Dashboard/DashboardView.vue';
 
 const loginState = defineStore('login', {
 
@@ -51,7 +52,8 @@ export default Vue.extend({
 
 
   components: {
-    LoginView
+    LoginView,
+    DashboardViewVue
   },
 })
 </script>
