@@ -16,12 +16,6 @@ const routes = [
   {
     path: "/dashboard",
     component: DashboardViewVue,
-    children: [
-      {
-        path: "/:universityId/faculty",
-        component: FacultyViewVue,
-      },
-    ],
   },
   {
     path: "/universities",

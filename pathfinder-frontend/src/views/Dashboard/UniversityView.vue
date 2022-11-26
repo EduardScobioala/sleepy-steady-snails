@@ -1,13 +1,6 @@
 <template lang="">
     <div>
-        <v-card class="toolbar">
-            <v-toolbar  elevation-10 color="primary">
-            
-        </v-toolbar>
-
-
-
-        </v-card>
+        
         
     </div>
 </template>
@@ -31,9 +24,5 @@ export default defineComponent({
 })
 </script>
 <style>
-.toolbar {
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
+
 </style>

@@ -13,7 +13,6 @@
     </div>
 </template>
 <script lang="ts">
-import { useGlobalStore } from '@/store/global';
 import { storeToRefs } from 'pinia';
 import { VToolbar, VBtn } from 'vuetify/lib';
 import { loggedInRef, logout } from '../services/authService';
