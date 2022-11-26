@@ -1,0 +1,22 @@
+@model List<Faculty>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+<div>
+      @foreach (var faculty in Model)
+      {
+          <div class="card" style="width: 18rem;">
+            <img src="@faculty.ImageSource" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">@faculty.Name</h5>
+                <p class="card-text">@faculty.Description</p>
+                <a href="#" class="btn btn-primary">Browse study paths</a>
+            </div>
+          </div>
+      }
+</div>

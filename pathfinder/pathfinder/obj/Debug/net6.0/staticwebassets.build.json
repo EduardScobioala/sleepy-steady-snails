@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ezFRCXSY6y3azrIL2TCFXkiMpxx1G6OMya4jCfoxZII=",
+  "Hash": "GDSysnWnA9I5ct2SG2znz79Qhb5CoAuxtMVdtqYxdNE=",
   "Source": "pathfinder",
   "BasePath": "_content/pathfinder",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/site.js"
+    },
+    {
+      "Identity": "/home/ioan/Documents/Projects/sleepy-steady-snails/pathfinder/pathfinder/wwwroot/lib/bootstrap.zip",
+      "SourceId": "pathfinder",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/ioan/Documents/Projects/sleepy-steady-snails/pathfinder/pathfinder/wwwroot/",
+      "BasePath": "_content/pathfinder",
+      "RelativePath": "lib/bootstrap.zip",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/bootstrap.zip"
     },
     {
       "Identity": "/home/ioan/Documents/Projects/sleepy-steady-snails/pathfinder/pathfinder/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

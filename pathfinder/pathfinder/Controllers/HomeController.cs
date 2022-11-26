@@ -59,6 +59,15 @@ public class HomeController : Controller
     
     
     
+    public IActionResult ViewAllUniversities([FromQuery] string city,[FromQuery]string country )
+    {
+        var list = context.Universities.Where(uni => uni.City==city).ToList();
+        
+        return View(list);
+    }
+    
+    
+    
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

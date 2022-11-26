@@ -1,0 +1,22 @@
+@model List<University>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div>
+      @foreach (University uni in Model)
+      {
+          <h1 class="">@uni.Name</h1>
+          <h2>@uni.Country</h2>
+      }
+</div>
+</body>
+</html>
