@@ -11,4 +11,5 @@ public class University
     public string Country { get; set; }
     
     public List<Faculty>? Faculties { get; set; }
+    public string Website { get; set; }
 }
