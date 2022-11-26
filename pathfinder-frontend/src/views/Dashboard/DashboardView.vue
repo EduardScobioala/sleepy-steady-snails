@@ -1,6 +1,8 @@
 <template >
     <div>
-        <h1>db</h1>
+        <h2>User {{ $route.path }}</h2>
+
+        <router-view />
     </div>
 </template>
 <script lang="ts">

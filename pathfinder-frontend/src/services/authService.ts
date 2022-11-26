@@ -23,3 +23,12 @@ export function checkAuthentication(cookies: any) {
   loggedInRef.value = false;
   return false;
 }
+
+export function logout(cookies: any, _router: any) {
+  console.log(cookies);
+
+  cookies.remove("auth");
+  loggedInRef.value = false;
+
+  _router.push("/login");
+}

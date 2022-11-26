@@ -3,23 +3,32 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import DashboardViewVue from "@/views/Dashboard/DashboardView.vue";
 import LoginViewVue from "@/views/Dashboard/LoginView.vue";
+import FacultyViewVue from "@/views/Dashboard/FacultyView.vue";
+import UniversityViewVue from "@/views/Dashboard/UniversityView.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
     component: HomeView,
   },
   {
     path: "/dashboard",
-    name: "dashboard",
     component: DashboardViewVue,
+    children: [
+      {
+        path: "/:universityId/faculty",
+        component: FacultyViewVue,
+      },
+    ],
+  },
+  {
+    path: "/universities",
+    component: UniversityViewVue,
   },
   {
     path: "/login",
-    name: "login",
     component: LoginViewVue,
   },
 ];
