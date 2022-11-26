@@ -1,17 +1,16 @@
 <template>
   <div>
-    <LoginView v-if="!loggedIn"></LoginView>
-    <DashboardViewVue v-if="loggedIn"></DashboardViewVue>
+
   </div>
 </template>
 
 <script lang="ts">
 import Vue, { inject } from 'vue'
 import { VueCookies } from 'vue-cookies';
-import LoginView from './Dashboard/LoginView.vue';
 import { defineStore, storeToRefs } from 'pinia';
 import { useGlobalStore } from '../store/global';
-import DashboardViewVue from '@/views/Dashboard/DashboardView.vue';
+import { checkAuthentication } from '@/services/authService';
+import { setup } from '../services/authService';
 
 const loginState = defineStore('login', {
 
@@ -21,22 +20,24 @@ const loginState = defineStore('login', {
 export default Vue.extend({
   name: 'HomeView',
 
+  mounted() {
 
 
-  created() {
+    console.log("created");
 
-    function checkAuthentication(cookies: VueCookies) {
-      if (cookies.get("auth") != null) {
-        loggedIn.value = true
-      }
-      else loggedIn.value = false
-    }
+
 
     const { loggedIn } = storeToRefs(useGlobalStore())
 
-    if (this.$cookies.get("auth")) {
-      checkAuthentication(this.$cookies)
-    }
+
+    if (checkAuthentication(this.$cookies))
+      this.$router.push("/dashboard")
+    else this.$router.push("/login")
+  },
+
+  created() {
+
+
 
   },
 
@@ -52,8 +53,7 @@ export default Vue.extend({
 
 
   components: {
-    LoginView,
-    DashboardViewVue
+
   },
 })
 </script>

@@ -1,6 +1,9 @@
 <template>
     <div>
         <v-toolbar color="primary">
+            <div v-if="loggedInRef">
+                <span>action1</span>
+            </div>
         </v-toolbar>
     </div>
 </template>
@@ -8,15 +11,18 @@
 import { useGlobalStore } from '@/store/global';
 import { storeToRefs } from 'pinia';
 import { VToolbar, VBtn } from 'vuetify/lib';
-
+import { loggedInRef } from '../services/authService'
 export default {
 
 
 
     setup() {
 
-        return {
+        console.log(loggedInRef);
 
+
+        return {
+            loggedInRef
         }
     }
 }

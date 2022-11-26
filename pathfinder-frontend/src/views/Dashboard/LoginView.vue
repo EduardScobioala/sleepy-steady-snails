@@ -38,20 +38,30 @@ import { RouterLink } from 'vue-router';
 import { VBtn, VCard, VCardActions, VCardTitle, VCheckbox, VTextField } from 'vuetify/lib';
 import { LoginModel } from '../../models/LoginModel';
 import router from '../../router/index';
+import { loggedInRef, checkAuthentication } from '../../services/authService';
 
 export default defineComponent({
 
+    created() {
+        console.log(loggedInRef.value);
 
 
-    setup() {
-        const { loggedIn } = storeToRefs(useGlobalStore())
-        let loginModel: LoginModel = new LoginModel()
-
+        checkAuthentication(this.$cookies)
+        if (loggedInRef.value)
+            router.push("/dashboard")
 
         return {
-            loginModel,
-            loggedIn
+            loggedInRef
         }
+    },
+
+    setup() {
+        let loginModel: LoginModel = new LoginModel()
+
+        return {
+            loginModel
+        }
+
     },
     data() {
         return {
@@ -83,9 +93,9 @@ export default defineComponent({
 
             await new Promise(r => setTimeout(r, 3000));
 
-            this.loggedIn = true
+            loggedInRef.value = true
 
-
+            router.push("/dashboard")
         },
 
         async loginFailed() {
